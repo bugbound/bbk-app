@@ -34,7 +34,7 @@ spec:
           
           counter=0
           ls -la /bbk-app/
-          
+          ls -la /bbk-app/project-data/BBS_PROJECT_CODE/scope/
           input="/bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt"
           while IFS= read -r line
           do
