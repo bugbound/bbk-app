@@ -39,21 +39,12 @@ spec:
           input="/bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt"
           while IFS= read -r line
           do
-            echo "$line"
-            echo "$line" > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt 
-            #arjun -u "$line" -oT /data/project-data/BBS_PROJECT_CODE/output/arjun.$HOSTNAME.$counter.results.txt -c 100 -T 1 --stable
-            #arjun -u $line -T 1 -c 100 -oT /data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt 
+            echo Running Arjun on "$line"
+            arjun -u "$line" -c 100 -oT /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt
             counter=$((counter+1))
           done < "$input"
           
-          #arjun -i /data/tmpurls.txt -oT /data/arjun.results.txt --stable
           
           
           echo all done
-  
-          echo new 
-          
-          
-
-
       restartPolicy: Never
