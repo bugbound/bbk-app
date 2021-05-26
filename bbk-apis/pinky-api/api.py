@@ -18,7 +18,7 @@ def start_pinky():
   pinky_script = request.args.get('pinkyscript')
   bbs_project_id = request.args.get('project_id')
   bbs_project_code = request.args.get('project_code')
-  subprocess.call(['/bin/bash', '/app/run_pinky_script.sh', pinky_script, bbs_project_id, bbs_project_code])
+  subprocess.call(['/bin/bash', '/bbk-app/bbk-apis/pinky-api/run_pinky_script.sh', pinky_script, bbs_project_id, bbs_project_code])
   return "<h1>PINKY</h1><p>pinky starting: %s </p>"%pinky_script
   
   
