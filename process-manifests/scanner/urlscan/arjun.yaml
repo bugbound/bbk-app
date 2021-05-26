@@ -1,0 +1,99 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: arjun
+  labels:
+    app: arjun
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: arjun
+    spec:
+      volumes:
+      - name: data-volume
+        hostPath: 
+          path: /opt/kubedata
+          type: Directory
+      containers:
+      - name: arjun
+        image: python:3.8-slim
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+        command: 
+        - /bin/sh
+        - -c
+        - |
+          echo v1
+          mkdir -p /data/arjun
+          pip3 install arjun
+          
+          arjun -h
+          #echo https://www.youtube.com/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/app_shell >> /data/tmpurls.txt
+          #echo https://www.youtube.com/about/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/api/stats/atr >> /data/tmpurls.txt
+          #echo https://www.youtube.com/embed/KEcbFSaLpoM >> /data/tmpurls.txt
+          #echo https://www.youtube.com/howyoutubeworks/policies/copyright/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/jobs/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/intl/ALL_uk/jobs/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/watch_popup >> /data/tmpurls.txt
+          #echo https://www.youtube.com/yts/img/favicon_32-vflOogEID.png >> /data/tmpurls.txt
+          #echo https://www.youtube.com/opensearch >> /data/tmpurls.txt
+          #echo https://www.youtube.com/feed/storefront?bp=ogUCKAI%3D >> /data/tmpurls.txt
+          #echo https://www.youtube.com/premium >> /data/tmpurls.txt
+          #echo https://www.youtube.com/watch?v=P47pj2K7NYY >> /data/tmpurls.txt
+          #echo https://www.youtube.com/channel/UCMH_Sp6qccVo5r58K7Hpmcg >> /data/tmpurls.txt
+          #echo https://www.youtube.com/c/tametheark/videos >> /data/tmpurls.txt
+          #echo https://www.youtube.com/c/tametheark/playlists >> /data/tmpurls.txt
+          #echo https://www.youtube.com/c/tametheark/community >> /data/tmpurls.txt
+          #echo https://www.youtube.com/c/tametheark/channels >> /data/tmpurls.txt
+          #echo https://www.youtube.com/c/tametheark/about >> /data/tmpurls.txt
+          #echo https://www.youtube.com/c/tametheark/search?query=test >> /data/tmpurls.txt
+          #echo https://www.youtube.com/results?search_query=test >> /data/tmpurls.txt
+          #echo https://www.youtube.com/feed/explore >> /data/tmpurls.txt
+          #echo https://www.youtube.com/feed/subscriptions >> /data/tmpurls.txt
+          #echo https://www.youtube.com/feed/library >> /data/tmpurls.txt
+          #echo https://www.youtube.com/playlist?list=WL >> /data/tmpurls.txt
+          #echo https://www.youtube.com/account_privacy >> /data/tmpurls.txt
+          #echo https://www.youtube.com/t/terms >> /data/tmpurls.txt
+          #echo https://www.youtube.com/t/terms-nosuchpage >> /data/tmpurls.txt
+          #echo https://www.youtube.com/t/terms?archive=20200331 >> /data/tmpurls.txt
+          #echo https://www.youtube.com/feed/history >> /data/tmpurls.txt
+          #echo https://www.youtube.com/reporthistory >> /data/tmpurls.txt
+          #echo https://www.youtube.com/trends/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/paid_memberships?ybp=mAEK >> /data/tmpurls.txt
+          #echo https://www.youtube.com/creators/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/t/contact_us/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/ads/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/intl/en-GB/howyoutubeworks/policies/community-guidelines/ >> /data/tmpurls.txt
+          #echo https://www.youtube.com/t/terms_paidservice >> /data/tmpurls.txt
+          #echo https://www.youtube.com/t/usage_paycontent >> /data/tmpurls.txt
+          #echo https://www.youtube.com/new >> /data/tmpurls.txt
+          counter=0
+          echo https://www.youtube.com/ > /data/tmpurls.txt
+          echo https://www.youtube.com/ >> /data/tmpurls.txt
+          ls -la /data/
+          
+          input="/data/tmpurls.txt"
+          while IFS= read -r line
+          do
+            echo "$line"
+            #arjun -u "$line" -oT /data/arjun.$HOSTNAME.$counter.results.txt -c 100 -T 1 --stable
+            arjun -u $line -T 1 -c 100 -oT /data/$HOSTNAME.$counter.results.txt 
+            counter=$((counter+1))
+          done < "$input"
+          
+          #arjun -i /data/tmpurls.txt -oT /data/arjun.results.txt --stable
+          
+          
+          echo all done
+          ls -la /data/
+          echo new 
+          
+          
+
+
+      restartPolicy: Never
