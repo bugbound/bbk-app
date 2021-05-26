@@ -27,7 +27,7 @@ spec:
         - -c
         - |
           echo v1
-          mkdir -p /data/project_data/BBS_PROJECT_CODE/output/
+          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/
           pip3 install arjun
           
           arjun -h
@@ -35,12 +35,12 @@ spec:
           counter=0
           ls -la /bbk-app/
           
-          input="/bbk-app/project_data/BBS_PROJECT_CODE/scope/scope.urls.txt"
+          input="/bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt"
           while IFS= read -r line
           do
             echo "$line"
-            echo "$line" > /data/project_data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt 
-            #arjun -u "$line" -oT /data/project_data/BBS_PROJECT_CODE/output/arjun.$HOSTNAME.$counter.results.txt -c 100 -T 1 --stable
+            echo "$line" > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt 
+            #arjun -u "$line" -oT /data/project-data/BBS_PROJECT_CODE/output/arjun.$HOSTNAME.$counter.results.txt -c 100 -T 1 --stable
             #arjun -u $line -T 1 -c 100 -oT /data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt 
             counter=$((counter+1))
           done < "$input"
