@@ -2,11 +2,11 @@ echo running $1
 export BBS_PINKY_SCRIPT=$1
 export BBS_PROJECT_ID=$2
 export BBS_PROJECT_CODE=$3
-export INPUT_LIST=$4
+export BBS_INPUT_LIST=$4
 
 echo BBS PROJECT ID  : $BBS_PROJECT_ID
 echo BBS PROJECT CODE: $BBS_PROJECT_CODE
-echo             LIST: $INPUT_LIST
+echo             LIST: $BBS_INPUT_LIST
 
 
 echo Creating manifest dirs
@@ -27,7 +27,9 @@ echo Building manifests
 sed -i "s/TASK_NAME/${BBS_PROJECT_CODE}/g" $FULL_MANIFEST_PATH
 sed -i "s/BBS_PROJECT_ID/${BBS_PROJECT_ID}/g" $FULL_MANIFEST_PATH
 sed -i "s/BBS_PROJECT_CODE/${BBS_PROJECT_CODE}/g" $FULL_MANIFEST_PATH
-sed -i "s/INPUT_LIST/${INPUT_LIST}/g" $FULL_MANIFEST_PATH
+sed -i "s/BBS_INPUT_LIST/${BBS_INPUT_LIST}/g" $FULL_MANIFEST_PATH
+
+
 
 
 echo Removing any previous jobs...

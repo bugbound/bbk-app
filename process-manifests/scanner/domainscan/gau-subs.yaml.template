@@ -40,7 +40,7 @@ spec:
 
           echo reading list items
           counter=0
-          input="/bbk-app/project-data/BBS_PROJECT_CODE/INPUT_LIST"
+          input="/bbk-app/project-data/BBS_PROJECT_CODE/BBS_INPUT_LIST"
           while IFS= read -r line
           do
             echo Running Gau on "$line"
