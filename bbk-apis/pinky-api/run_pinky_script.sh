@@ -24,9 +24,13 @@ echo copying manifest template
 cp /bbk-app/process-manifests/$BBS_PINKY_SCRIPT $FULL_MANIFEST_PATH
 
 echo Building manifests
+echo name
 sed -i "s/TASK_NAME/${BBS_PROJECT_CODE}/g" $FULL_MANIFEST_PATH
+echo id
 sed -i "s/BBS_PROJECT_ID/${BBS_PROJECT_ID}/g" $FULL_MANIFEST_PATH
+echo code
 sed -i "s/BBS_PROJECT_CODE/${BBS_PROJECT_CODE}/g" $FULL_MANIFEST_PATH
+echo input list
 sed -i "s/BBS_INPUT_LIST/${BBS_INPUT_LIST}/g" $FULL_MANIFEST_PATH
 
 
