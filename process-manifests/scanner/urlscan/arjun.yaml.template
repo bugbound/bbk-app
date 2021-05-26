@@ -26,16 +26,12 @@ spec:
         - /bin/bash
         - -c
         - |
-          echo v1
+          echo Arjun v1
           mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/
           pip3 install arjun
           
-          arjun -h
-          
+          echo reading scope urls
           counter=0
-          ls -la /bbk-app/
-          cat /bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt
-          echo reading urls
           input="/bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt"
           while IFS= read -r line
           do
