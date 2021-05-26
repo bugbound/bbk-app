@@ -34,7 +34,8 @@ spec:
           
           counter=0
           ls -la /bbk-app/
-          ls -la /bbk-app/project-data/BBS_PROJECT_CODE/scope/
+          lcat /bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt
+          echo reading urls
           input="/bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt"
           while IFS= read -r line
           do
@@ -49,7 +50,7 @@ spec:
           
           
           echo all done
-          ls -la /data/
+  
           echo new 
           
           
