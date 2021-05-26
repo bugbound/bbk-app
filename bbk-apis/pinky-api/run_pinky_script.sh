@@ -9,7 +9,9 @@ echo BBS PROJECT CODE: $BBS_PROJECT_CODE
 
 
 echo Creating manifest dirs
-mkdir -p /bbk-app/project-data/$BBS_PROJECT_CODE/manifests
+mkdir -p /bbk-app/project-data/$BBS_PROJECT_CODE/manifests/scanner/urlscan/
+
+
 
 echo Creating manifest yaml from template
 export GENERATED_MANIFEST_FILE=`echo $BBS_PINKY_SCRIPT | sed -e "s/.template//" -e "s///"`
