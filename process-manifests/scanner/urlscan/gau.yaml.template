@@ -1,0 +1,112 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: arjun-TASK_NAME
+  labels:
+    app: arjun-TASK_NAME
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: arjun-TASK_NAME
+    spec:
+      volumes:
+      - name: data-volume
+        hostPath: 
+          path: /opt/bbk-app/
+          type: Directory
+      containers:
+      - name: arjun-TASK_NAME
+        image: python:3.8-slim
+        volumeMounts:
+        - name: data-volume
+          mountPath: /bbk-app
+        command: 
+        - /bin/bash
+        - -c
+        - |
+          echo Gau v1
+          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/
+          
+          apt update -y
+          apt install unzip wget curl -y
+          
+          wget https://github.com/lc/gau/releases/download/v1.1.0/gau_1.1.0_linux_amd64.tar.gz
+          gzip -d gau_1.1.0_linux_amd64.tar.gz
+          tar -xvf gau_1.1.0_linux_amd64.tar
+          ls -la
+          
+          
+          
+          pip3 install arjun
+          
+          echo reading scope urls
+          counter=0
+          input="/bbk-app/project-data/BBS_PROJECT_CODE/INPUT_LIST"
+          while IFS= read -r line
+          do
+            echo Running Arjun on "$line"
+            arjun -u "$line" -c 100 -oT /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt --stable
+            counter=$((counter+1))
+          done < "$input"
+          
+          
+          
+          echo all done
+      restartPolicy: Never
+
+---
+
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: 120gau
+  labels:
+    app: 120gau
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: 120gau
+    spec:
+      volumes:
+      - name: data-volume
+        hostPath: 
+          path: /opt/kubedata
+          type: Directory
+      containers:
+      - name: 120gau
+        image: python:3.8-slim
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+        command: 
+        - /bin/sh
+        - -c
+        - |
+          echo v1
+          mkdir -p /data/aquatone
+          
+          cat /data/100.log.txt 
+          
+          apt update -y
+          apt install unzip wget curl -y
+          
+          wget https://github.com/lc/gau/releases/download/v1.1.0/gau_1.1.0_linux_amd64.tar.gz
+          gzip -d gau_1.1.0_linux_amd64.tar.gz
+          tar -xvf gau_1.1.0_linux_amd64.tar
+          ls -la
+          #unzip aquatone_linux_amd64_1.7.0.zip
+          echo gau starting...
+          
+          cat /data/100.log.txt  | ./gau > /data/120.log.txt
+          echo all done
+          echo new 
+          
+          
+
+
+      restartPolicy: Never
