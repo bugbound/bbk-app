@@ -9,20 +9,15 @@ echo BBS PROJECT CODE: $BBS_PROJECT_CODE
 
 
 echo Creating manifest dirs
-mkdir -p /data/$BBS_PROJECT_CODE/manifests
-mkdir -p /data/$BBS_PROJECT_CODE/manifests/discovery
-mkdir -p /data/$BBS_PROJECT_CODE/manifests/hostdiscovery
-mkdir -p /data/$BBS_PROJECT_CODE/manifests/wordlists
-mkdir -p /data/$BBS_PROJECT_CODE/manifests/attack
-mkdir -p /data/$BBS_PROJECT_CODE/manifests/osintel
+mkdir -p /bbk-app/project-data/$BBS_PROJECT_CODE/manifests
 
 echo Creating manifest yaml from template
 export GENERATED_MANIFEST_FILE=`echo $BBS_PINKY_SCRIPT | sed -e "s/.template//" -e "s///"`
-export FULL_MANIFEST_PATH="/data/$BBS_PROJECT_CODE/manifests/$GENERATED_MANIFEST_FILE"
+export FULL_MANIFEST_PATH="/bbk-app/project-data/$BBS_PROJECT_CODE/manifests/$GENERATED_MANIFEST_FILE"
 
 echo full manifest file path is $FULL_MANIFEST_PATH
 
-cp /pinky/templates/$BBS_PINKY_SCRIPT $FULL_MANIFEST_PATH
+cp /bbk-app/process-manifests/$BBS_PINKY_SCRIPT $FULL_MANIFEST_PATH
 
 echo Building manifests
 sed -i "s/TASK_NAME/${BBS_PROJECT_CODE}/g" $FULL_MANIFEST_PATH

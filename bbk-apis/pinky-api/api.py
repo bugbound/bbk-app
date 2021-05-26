@@ -1,4 +1,4 @@
-# Copyright 2020 Bugbound
+# Copyright 2021 Bugbound
 
 from flask import Flask, request
 import subprocess
