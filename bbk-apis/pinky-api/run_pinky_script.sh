@@ -17,6 +17,7 @@ export FULL_MANIFEST_PATH="/bbk-app/project-data/$BBS_PROJECT_CODE/manifests/$GE
 
 echo full manifest file path is $FULL_MANIFEST_PATH
 
+echo copying manifest template
 cp /bbk-app/process-manifests/$BBS_PINKY_SCRIPT $FULL_MANIFEST_PATH
 
 echo Building manifests
