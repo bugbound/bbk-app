@@ -40,7 +40,7 @@ spec:
           while IFS= read -r line
           do
             echo Running Arjun on "$line"
-            arjun -u "$line" -c 100 -oT /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt
+            arjun -u "$line" -c 100 -oT /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt --stable
             counter=$((counter+1))
           done < "$input"
           
