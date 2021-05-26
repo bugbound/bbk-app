@@ -11,7 +11,7 @@ echo             LIST: $INPUT_LIST
 
 echo Creating manifest dirs
 mkdir -p /bbk-app/project-data/$BBS_PROJECT_CODE/manifests/scanner/urlscan/
-
+mkdir -p /bbk-app/project-data/$BBS_PROJECT_CODE/manifests/scanner/domainscan/
 
 
 echo Creating manifest yaml from template
