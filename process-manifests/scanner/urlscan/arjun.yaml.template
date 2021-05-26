@@ -32,7 +32,7 @@ spec:
           
           echo reading scope urls
           counter=0
-          input="/bbk-app/project-data/BBS_PROJECT_CODE/scope/scope.urls.txt"
+          input="/bbk-app/project-data/BBS_PROJECT_CODE/INPUT_LIST"
           while IFS= read -r line
           do
             echo Running Arjun on "$line"
