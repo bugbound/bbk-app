@@ -44,7 +44,7 @@ spec:
           while IFS= read -r line
           do
             echo Running Gau on "$line"
-            gau -subs $line -o /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt
+            ./gau -subs $line -o /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt
             counter=$((counter+1))
           done < "$input"
           
