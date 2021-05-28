@@ -22,9 +22,12 @@ def start_pinky():
     #build manifest
     #kube del
     #kube apply
-    build_manifest(pinky_script, bbs_project_id, bbs_project_code, input_list_to_use)
-    #subprocess.call(['/bin/bash', '/bbk-app/bbk-apis/pinky-api/run_pinky_script.sh', pinky_script, bbs_project_id, bbs_project_code, input_list_to_use])
-    return "<h1>PINKY</h1><p>pinky starting: %s </p>"%pinky_script
+    project_manifest_filepath = build_manifest(pinky_script, bbs_project_id, bbs_project_code, input_list_to_use)
+    #try kill the job if its already running...
+    subprocess.call(['kubectl', 'delete', '-f', project_manifest_filepath])
+    #run the job
+    subprocess.call(['kubectl', 'apply', '-f', project_manifest_filepath])
+    return "<h1>PINKY</h1><p>pinky starting: %s </p>"%project_manifest_filepath
   
 def build_manifest(pinky_script, bbs_project_id, bbs_project_code, input_list_to_use):
     manifest_template = "/bbk-app/process-manifests/"+pinky_script
@@ -38,5 +41,7 @@ def build_manifest(pinky_script, bbs_project_id, bbs_project_code, input_list_to
         
     with open(project_manifest_filepath, "w") as text_file:
         text_file.write(project_manifest_content)
+        
+    return project_manifest_filepath
 
 
