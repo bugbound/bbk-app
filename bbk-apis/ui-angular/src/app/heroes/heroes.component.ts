@@ -13,6 +13,7 @@ export class HeroesComponent implements OnInit {
   message = '?';
   heroToDelete: Hero;
   showModal = false;
+  status = "NOT RUNNING"
 
   constructor(private scanService: ScanService) {
     this.heroes$ = scanService.entities$;
@@ -75,5 +76,11 @@ export class HeroesComponent implements OnInit {
 
   update(hero: Hero) {
     this.scanService.update(hero);
+  }
+  
+  startScan(hero: Hero)  {
+    alert(hero.name)
+    this.scanService.runNewScan(hero);
+    
   }
 }

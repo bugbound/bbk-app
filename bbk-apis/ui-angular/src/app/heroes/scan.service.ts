@@ -10,4 +10,8 @@ export class ScanService extends EntityCollectionServiceBase<Hero> {
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super('Hero', serviceElementsFactory);
   }
+  
+  runNewScan(hero: Hero)  {
+    alert("Running new scan for "+hero.id);
+  }
 }

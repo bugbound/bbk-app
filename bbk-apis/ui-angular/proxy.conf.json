@@ -2,5 +2,9 @@
   "/api": {
     "target": "http://localhost:7627",
     "secure": false
-  }
+  },
+  "/pinky-api": {
+    "target": "http://pinky-service:7777",
+    "secure": false
+  },
 }

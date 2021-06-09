@@ -11,6 +11,7 @@
         [heroes]="heroes"
         (selected)="select($event)"
         (deleted)="askToDelete($event)"
+        (play)="startScan($event)"
       ></app-hero-list>
       <app-hero-detail
         *ngIf="selected"

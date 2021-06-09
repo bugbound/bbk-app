@@ -26,6 +26,15 @@
           label="Edit"
           [item]="hero"
         ></app-button-footer>
+        
+        <app-button-footer
+          class="card-footer-item"
+          [className]="'play-item'"
+          [iconClasses]="'fas fa-play'"
+          (clicked)="startNewScan($event)"
+          label="Start Scan"
+          [item]="hero"
+        ></app-button-footer>
       </footer>
     </div>
   </li>

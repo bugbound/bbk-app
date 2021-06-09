@@ -16,6 +16,7 @@ export class HeroListComponent {
   @Input() heroes: Hero[];
   @Output() deleted = new EventEmitter<Hero>();
   @Output() selected = new EventEmitter<Hero>();
+  @Output() play = new EventEmitter<Hero>();
 
   selectHero(hero: Hero) {
     this.selected.emit(hero);
@@ -23,6 +24,10 @@ export class HeroListComponent {
 
   deleteHero(hero: Hero) {
     this.deleted.emit(hero);
+  }
+  
+  startNewScan(hero: Hero)  {
+    this.play.emit(hero)
   }
 
   // trackByHero(hero: Hero): string {
