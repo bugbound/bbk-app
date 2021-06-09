@@ -1,0 +1,69 @@
+<div class="card edit-detail">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{editingHero.name}}
+      &nbsp;
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <div class="field" *ngIf="editingHero.id">
+        <label class="label" for="id">
+          id
+        </label>
+        <input name="id" class="input" type="text" [(ngModel)]="editingHero.id" placeholder="e.g. HeroColleen" readOnly />
+      </div>
+      <div class="field">
+        <label class="label" for="name">
+          name
+        </label>
+        <input name="name" class="input" type="text" [(ngModel)]="editingHero.name" placeholder="e.g. Colleen" />
+      </div>
+      <div class="field">
+        <label class="label" for="description">
+          description
+        </label>
+        <input name="description" class="input" type="text" [(ngModel)]="editingHero.description" placeholder="dance fight!" />
+      </div>
+      
+      
+      heh
+      
+      <div class="field">
+        <label class="label" for="program_url">
+          program_url
+        </label>
+        <input name="program_url" class="input" type="text" [(ngModel)]="editingHero.program_url" placeholder="dance fight!" />
+      </div>
+      
+      <div class="field">
+        <label class="label" for="in_scope_urls">
+          in_scope_urls
+        </label>
+        <input name="in_scope_urls" class="input" type="text" [(ngModel)]="editingHero.in_scope_urls" placeholder="dance fight!" />
+      </div>
+      
+      <div class="field">
+        <label class="label" for="in_scope_domains">
+          in_scope_domains
+        </label>
+        <input name="in_scope_domains" class="input" type="text" [(ngModel)]="editingHero.in_scope_domains" placeholder="dance fight!" />
+      </div>
+      
+      <div class="field">
+        <label class="label" for="in_scope_wildcards">
+          in_scope_wildcards
+        </label>
+        <input name="in_scope_wildcards" class="input" type="text" [(ngModel)]="editingHero.in_scope_wildcards" placeholder="dance fight!" />
+      </div>
+      
+      bah
+    </div>
+  </div>
+  <footer class="card-footer ">
+    <app-button-footer class="card-footer-item" [className]="'cancel-button'" [iconClasses]="'fas fa-undo'" (clicked)="clear()"
+      label="Cancel" [item]="editingHero"></app-button-footer>
+    <app-button-footer class="card-footer-item" [className]="'save-button'" [iconClasses]="'fas fa-save'" (clicked)="saveHero()"
+      label="Save" [item]="editingHero"></app-button-footer>
+  </footer>
+</div>
