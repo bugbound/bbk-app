@@ -75,6 +75,9 @@ header {
   .input[readonly] {
     background-color: $shade-light;
   }
+  .textarea[readonly] {
+    background-color: $shade-light;
+  }
 }
 
 .content-title-group {
