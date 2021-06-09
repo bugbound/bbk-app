@@ -6,5 +6,5 @@
   "/pinky-api": {
     "target": "http://pinky-service:7777",
     "secure": false
-  },
+  }
 }
