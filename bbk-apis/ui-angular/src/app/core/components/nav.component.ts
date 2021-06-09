@@ -10,9 +10,6 @@ import { Component, OnInit } from '@angular/core';
       <a routerLink="/scans" routerLinkActive="router-link-active">
         <span>Scans</span>
       </a>
-      <a routerLink="/villains" routerLinkActive="router-link-active">
-        <span>Villains</span>
-      </a>
       <a routerLink="/about" routerLinkActive="router-link-active">
         <span>About</span>
       </a>
