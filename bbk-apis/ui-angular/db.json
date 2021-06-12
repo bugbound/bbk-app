@@ -6,6 +6,231 @@
       "id": "fsEUsaj",
       "program_url": "bugcrowd.com;/jmnkl",
       "in_scope_urls": "22"
+    },
+    {
+      "name": "Accellion Enterprise Content Firewall",
+      "description": "The Accellion's Enterprise Content Firewall helps IT executives lock down the exchange of confidential enterprise information",
+      "program_url": "https://bugcrowd.com/accellion-public",
+      "in_scope_urls": "https://bugcrowd-pub.bounty.accellion.net/",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "lGGCMoY"
+    },
+    {
+      "name": "Credit Karma",
+      "description": "Credit Karma is a personal finance technology company",
+      "program_url": "https://bugcrowd.com/creditkarma",
+      "in_scope_urls": "https://help.creditkarma.com/\nhttps://accounts.creditkarma.com\nhttps://tax.creditkarma.com\nhttps://blog.creditkarma.com/\nhttps://www.creditkarma.ca/",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "https://*.creditkarma.com",
+      "id": "R0pz8YS"
+    },
+    {
+      "name": "Gusto",
+      "description": "Gusto is reimagining payroll, benefits and HR for modern companies.",
+      "program_url": "https://bugcrowd.com/gusto",
+      "in_scope_urls": "https://dev.gusto.com/\nhttps://github.com/Gusto/apollo-federation-ruby\t\nhttps://github.com/Gusto/grpc-web-ruby\napp.gusto-demo.com\n",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "0cfHxcf"
+    },
+    {
+      "name": "Cengage VDP",
+      "description": "",
+      "program_url": "https://bugcrowd.com/cengage-vdp",
+      "in_scope_urls": "https://www.cengage.com/",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "https://*.cengage.com",
+      "id": "oY4xVTq"
+    },
+    {
+      "name": "Cloudinary",
+      "description": "Cloudinary, a SaaS/API provider that streamlines a website's entire image management pipeline",
+      "program_url": "https://bugcrowd.com/cloudinary",
+      "in_scope_urls": "https://cloudinary.com/console\nhttps://res.cloudinary.com\nhttps://api.cloudinary.com\nwidget.cloudinary.com",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "WnONEzL"
+    },
+    {
+      "name": "Mailgun",
+      "description": "Mailgun empowers developers by allowing them to easily integrate email into their applications. ",
+      "program_url": "https://bugcrowd.com/mailgun",
+      "in_scope_urls": "https://app.mailgun.com\nhttps://login.mailgun.com/\nhttps://signup.mailgun.com\nhttps://api.mailgun.net\nhttps://www.mailjet.com/\nhttps://app.mailjet.com/\nhttps://api.mailjet.com/\nhttps://in.mailjet.com:587/",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "3hdVaEB"
+    },
+    {
+      "name": "Regions Bank Vulnerability Disclosure Program",
+      "description": "",
+      "program_url": "https://bugcrowd.com/regions-vdp",
+      "in_scope_urls": "",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.firststerling.com\n*.regions.com\n*.regions.us\n*.regions6x.com\n*.regionsapps.com\t\t\n*.regionsdev.com\t\t\n*.regionsmortgage.com\t\t\n*.regionsqa.com\t\t\n*.regionsretirement.com\t\t\n*.regionssource.com\t\t\n*.regionstest.com\t\t\n*.rgbk.com",
+      "id": "86Ffrya"
+    },
+    {
+      "name": "Digistorm",
+      "description": "Digistorm is a software, app and website development company, specialising in the K-12 education industry",
+      "program_url": "https://bugcrowd.com/digistorm",
+      "in_scope_urls": "http://app.sandbox.digistorm.com\nhttps://{account-code}.app.sandbox.digistorm.com-1/forms/enrol-form\nhttps://{account-code}.app.sandbox.digistorm.com-2/forms/tour-1\nhttps://app.sandbox.digistorm.com/graphql\nhttps://app.sandbox.digistorm.com/",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "R3TsGGW"
+    },
+    {
+      "name": "Upwork",
+      "description": "",
+      "program_url": "https://bugcrowd.com/upwork",
+      "in_scope_urls": "",
+      "in_scope_domains": "www.upwork.com",
+      "in_scope_wildcards": "",
+      "id": "P6SllMe"
+    },
+    {
+      "name": "Western Union",
+      "description": "Western Union is a financial services and communications company ",
+      "program_url": "https://bugcrowd.com/westernunion",
+      "in_scope_urls": "https://www.westernunion.com\nhttps://www2.westernunion.com\nhttps://www.westernunion.fr\nhttps://www.westernunion.de\nhttps://www.westernunion.no\nhttps://www.westernunion.se\nhttps://www.westernunion.ca\nhttps://www.westernunion.nl\nhttps://www.westernunion.es\nhttps://www.westernunion.ie\nhttps://www.westernunion.ch\nhttps://www.westernunion.pt\nhttps://www.westernunion.be\nhttps://www.westernunion.dk\nhttps://www.westernunion.fi\nhttps://www.westernunion.pl\nhttps://www.westernunion.ee\nhttps://www.westernunion.lu\nhttps://www.westernunion.gr\nhttps://www.westernunion.at\nhttps://www.westernunion.it\nhttps://www.westernunion.co.nz\nhttps://www.westernunion.co.uk\nhttps://www.westernunion.com.au\nhttps://cuba.westernunion.com\nhttps://egypt.westernunion.com\nhttps://hk.westernunion.com\nhttps://india.westernunion.com\nhttps://jamaica.westernunion.com\nhttps://locations.westernunion.com\nhttps://m.westernunion.com\nhttps://senegal.westernunion.com\nhttps://sg.westernunion.com\nhttps://wuagentportal.westernunion.com\nhttps://agentportal.westernunion.com\nhttps://westernunionbank.com\nhttps://ebanking.westernunionbank.com\nhttps://auth.globalpay.westernunion.com\nhttps://globalpay.westernunion.com\npayee.globalpay.westernunion.com\nhttps://gpfi.globalpay.westernunion.com\ntransvision.westernunion.com\npartnernet.westernunion.com\niwgo.westernunion.com\nhttps://business.westernunion.com/\nhttp://agenttraining.westernunion.com\nhttps://paymentstatus.westernunion.com\nhttps://foundation.westernunion.com\nhttps://partners.westernunion.com\nwucare.westernunion.com\nsecure.westernunion.com\ncorporate.westernunion.com\ntrackpayments.westernunion.com\nmasspay.api.westernunion.com\nwuinsights.westernunion.com\nremoteaccess.westernunion.com\nsecureauth.westernunion.com",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "o_M7AxL"
+    },
+    {
+      "name": "DICK'S Sporting Goods",
+      "description": "",
+      "program_url": "https://bugcrowd.com/dickssportinggoods",
+      "in_scope_urls": "",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.dickssportinggoods.com\n*.golfgalaxy.com\n*.fieldandstreamshop.com\n*.dcsg.com",
+      "id": "hffH_Bh"
+    },
+    {
+      "name": "Sprout Social",
+      "description": "Sprout Social’s social media management platform will help you find, form and deepen real connections with the people who love your brand.",
+      "program_url": "https://bugcrowd.com/sproutsocial",
+      "in_scope_urls": "app.sproutsocial.com\nmedia.sproutsocial.com\t\nsproutsocial.com/insights\nsproutsocial.com/adapt/\nsproutsocial.com/es/\nsproutsocial.com/pt/\n",
+      "in_scope_domains": "sproutsocial.com\nsimplymeasured.com\ngetbambu.com",
+      "in_scope_wildcards": "",
+      "id": "D8qwGqt"
+    },
+    {
+      "name": "Indeed",
+      "description": "Indeed has given job seekers free access to millions of jobs from thousands of company websites and job boards",
+      "program_url": "https://bugcrowd.com/indeed",
+      "in_scope_urls": "https://analytics.indeed.com\t\t\nhttps://employers.indeed.com/\t\t\nhttps://my.indeed.com\t\t\nhttps://accounts.indeed.com\t\t\nhttps://billing.indeed.com\t\t\nhttps://resumes.indeed.com\t\t\nhttps://secure.indeed.com\nhttps://itaportal.indeed.com",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "2FJJNDo"
+    },
+    {
+      "name": "NameJet VDP",
+      "description": "",
+      "program_url": "https://bugcrowd.com/namejet-vdp",
+      "in_scope_urls": "",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.namejet.com",
+      "id": "0oqk12W"
+    },
+    {
+      "name": "Blend",
+      "description": "The Blend platform makes it easy for borrowers to apply for a mortgage from any desktop, tablet, or mobile device.",
+      "program_url": "https://bugcrowd.com/blend-vdp",
+      "in_scope_urls": "https://send.blend.com/\nhttps://knox.beta.blendlabs.com",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "",
+      "id": "O8XXKaw"
+    },
+    {
+      "name": "Web.com VDP",
+      "description": "",
+      "program_url": "https://bugcrowd.com/webdotcom-vdp",
+      "in_scope_urls": "",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.web.com\n*.register.com\n*.networksolutions.com",
+      "id": "wdlABNi"
+    },
+    {
+      "name": "Netflix",
+      "description": "",
+      "program_url": "https://bugcrowd.com/netflix",
+      "in_scope_urls": "secure.netflix.com\nichnaea.netflix.com\nhelp.netflix.com\ndockhand.netflix.com\npresentationtracking.netflix.com\nbeacon.netflix.com\nnmtracking.netflix.com\ncustomerevents.netflix.com\nmeechum.netflix.com\n",
+      "in_scope_domains": "www.netflix.com",
+      "in_scope_wildcards": "*.nflxvideo.net\n*.nflxext.com\n*.nflximg.net\n*.nflxso.net",
+      "id": "1hIY6mW"
+    },
+    {
+      "name": "Asana",
+      "description": "",
+      "program_url": "https://bugcrowd.com/asana",
+      "in_scope_urls": "app.asana.com\nwebsiteform.asana.com\n",
+      "in_scope_domains": "asana.com",
+      "in_scope_wildcards": "*.asana.plus\n*.asana.biz\n*.app.asana.com",
+      "id": "G29Gbj-"
+    },
+    {
+      "name": "Lime",
+      "description": "",
+      "program_url": "https://bugcrowd.com/lime",
+      "in_scope_urls": "https://api.lime.bike\nhttps://webviews.lime.bike\nhttps://juicer.lime.bike\nhttps://admintool.lime.bike\nproxy-production.lime.bike\nhttps://ops.lime.bike\nhttps://airflow.limeinternal.com\nhttps://data.limeinternal.com\nhttps://orchard.limeinternal.com\nhttps://tab.limeinternal.com",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.lime.bike\n*.limeinternal.com\n",
+      "id": "PtqUQba"
+    },
+    {
+      "name": "ExpressVPN",
+      "description": "",
+      "program_url": "https://bugcrowd.com/expressvpn",
+      "in_scope_urls": "",
+      "in_scope_domains": "www.expressvpn.com",
+      "in_scope_wildcards": "*.expressvpn.com\n*.xvservice.net\n*.xvtest.net",
+      "id": "_dJCtjh"
+    },
+    {
+      "name": "Binance",
+      "description": "",
+      "program_url": "https://bugcrowd.com/binance",
+      "in_scope_urls": "api.binance.com\nbinance.sg\nbinance.us",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.binance.com\n*.binance.org\n*dex.binance.org\n\n",
+      "id": "a5Btlat"
+    },
+    {
+      "name": "HealthifyMe's Vulnerability Disclosure Program",
+      "description": "",
+      "program_url": "https://bugcrowd.com/healthifyme",
+      "in_scope_urls": "",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.healthifyme.com",
+      "id": "DceZx14"
+    },
+    {
+      "name": "LuluLemon",
+      "description": "",
+      "program_url": "https://bugcrowd.com/lululemon",
+      "in_scope_urls": "shop.lululemon.com",
+      "in_scope_domains": "http://www.lululemon.co.uk",
+      "in_scope_wildcards": "",
+      "id": "v1sLlDC"
+    },
+    {
+      "name": "SnapNames VDP",
+      "description": "",
+      "program_url": "https://bugcrowd.com/snapnames-vdp",
+      "in_scope_urls": "",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "*.snapnames.com",
+      "id": "-6PedVZ"
+    },
+    {
+      "name": "Cybrary",
+      "description": "",
+      "program_url": "https://bugcrowd.com/cybrary",
+      "in_scope_urls": "",
+      "in_scope_domains": "",
+      "in_scope_wildcards": "www.cybrary.it/*\napp.cybrary.it/*",
+      "id": "AgRIlPP"
     }
   ],
   "villains": [
