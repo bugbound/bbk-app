@@ -192,7 +192,7 @@
       "description": "",
       "program_url": "https://bugcrowd.com/binance",
       "in_scope_urls": "api.binance.com\nbinance.sg\nbinance.us",
-      "in_scope_domains": "",
+      "in_scope_domains": "api.binance.com\nbinance.sg\nbinance.us\nbinance.com\nbinance.org",
       "in_scope_wildcards": "*.binance.com\n*.binance.org\n*dex.binance.org\n\n",
       "id": "a5Btlat"
     },
