@@ -22,7 +22,7 @@ spec:
       #    type: Directory
       containers:
       - name: gau-subs-TASK_NAME
-        image: python:3.8-slim
+        image: golang:rc-stretch
         volumeMounts:
         - name: bbk-app-volume
           mountPath: /bbk-app
@@ -33,12 +33,13 @@ spec:
           echo Gau Subs v1
           mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/          
           
-          apt update -y
-          apt install unzip wget curl -y
+          #apt update -y
+          #apt install unzip wget curl -y
           
-          wget https://github.com/lc/gau/releases/download/v1.1.0/gau_1.1.0_linux_amd64.tar.gz
-          gzip -d gau_1.1.0_linux_amd64.tar.gz
-          tar -xvf gau_1.1.0_linux_amd64.tar
+          GO111MODULE=on go get -u -v github.com/lc/gau
+          #wget https://github.com/lc/gau/releases/download/v1.1.0/gau_1.1.0_linux_amd64.tar.gz
+          #gzip -d gau_1.1.0_linux_amd64.tar.gz
+          #tar -xvf gau_1.1.0_linux_amd64.tar
           ls -la
           echo starting gau subs
 
@@ -48,7 +49,7 @@ spec:
           while IFS= read -r line
           do
             echo Running Gau on "$line"
-            ./gau -subs $line -o /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt
+            gau -subs $line -o /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.results.txt
             counter=$((counter+1))
           done < "$input"
           
