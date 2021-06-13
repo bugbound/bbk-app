@@ -33,8 +33,10 @@ spec:
           echo Debug v1
           ls -la /bbk-app/
           apt update
-          apt install curl -y
+          apt install curl jq -y
           curl "http://pinky-service:7777/start_pinky?pinkyscript=scanner/domainscan/gau-subs.yaml.template&project_id=BBS_PROJECT_ID&project_code=BBS_PROJECT_CODE&input=BBS_PROJECT_LIST"
+          #curl "http://wwwui-service:8082/api/heroes/a5Btlat"
+          curl -s "http://wwwui-service:8082/api/heroes/BBS_PROJECT_ID" | jq -r '.name'
 
           echo all done
       restartPolicy: Never
