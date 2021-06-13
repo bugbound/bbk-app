@@ -54,6 +54,6 @@ const villains = [
   },
 ];
 
-const data = { heroes: heroes, villains: villains };
+const data = { heroes: heroes, villains: villains,  };
 
 module.exports = data;
