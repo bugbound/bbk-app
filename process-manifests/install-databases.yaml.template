@@ -39,7 +39,7 @@ spec:
           
           apt update
           apt install mysql-client -y
-          
+          apt search mysql-client
           mysql -u root -h $sql_server -p$sql_password -e "create database urlstore"
           
           
