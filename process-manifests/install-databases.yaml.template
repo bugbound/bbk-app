@@ -38,8 +38,8 @@ spec:
           echo Install Databases v1
           
           apt update
-          apt install mysql-client -y
-          apt search mysql-client
+          apt install default-mysql-client -y
+          
           mysql -u root -h $sql_server -p$sql_password -e "create database urlstore"
           
           
