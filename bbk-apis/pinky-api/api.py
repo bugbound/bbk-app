@@ -31,7 +31,9 @@ def start_pinky():
   
 def build_manifest(pinky_script, bbs_project_id, bbs_project_code, input_list_to_use):
     manifest_template = "/bbk-app/process-manifests/"+pinky_script
-    project_manifest_filepath = "/bbk-app/project-data/"+bbs_project_code+"/manifests/bah.yaml"
+    head, tail = os.path.split(manifest_template)
+    new_filename = tail.replace(".template","")
+    project_manifest_filepath = "/bbk-app/generated-manifests/"+new_filename
     template_content = ""
     with open(manifest_template) as f:
         template_content = f.read()

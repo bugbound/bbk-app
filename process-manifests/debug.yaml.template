@@ -32,5 +32,9 @@ spec:
         - |
           echo Debug v1
           ls -la /bbk-app/
+          apt update
+          apt install curl -y
+          curl "http://pinky-service:7777/start_pinky?pinkyscript=scanner/domainscan/gau-subs.yaml.template&project_id=BBS_PROJECT_ID&project_code=BBS_PROJECT_CODE&input=BBS_PROJECT_LIST"
+
           echo all done
       restartPolicy: Never
