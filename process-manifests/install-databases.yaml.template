@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: installdb
+  labels:
+    app: installdb
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: installdb
+    spec:
+      volumes:
+      - name: bbk-app-volume
+        nfs: 
+          server: 172.16.0.10
+          path: /media/39b1bd3d-d92a-4fd5-9df8-72f089aa1912/kube3000_data/bbk-app/
+      #- name: bbk-app-volume
+      #  hostPath: 
+      #    path: /opt/bbk-app/
+      #    type: Directory
+      containers:
+      - name: installdb
+        image: python:3.8-slim
+        env:
+        - name: sql_password
+          value: "muhahahahahhahahahaha"
+        - name: sql_server
+          value: "mysql-service"
+        volumeMounts:
+        - name: bbk-app-volume
+          mountPath: /bbk-app
+        command: 
+        - /bin/bash
+        - -c
+        - |
+          echo Install Databases v1
+          
+          apt update
+          apt install mysql-client -y
+          
+          mysql -u root -h $sql_server -p$sql_password -e "create database urlstore"
+          
+          
+          echo all done
+      restartPolicy: Never
