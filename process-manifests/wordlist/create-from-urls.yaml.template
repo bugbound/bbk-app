@@ -36,15 +36,23 @@ spec:
           go get -u github.com/tomnomnom/anew
           go get -u github.com/tomnomnom/unfurl
           
-          
+          # Usage: remove all utility bills pdf file password 
+          shopt -s nullglob
+          for f in "/bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt"
+          do
+            echo "Removing password for pdf file - $f"
+          done
+          # unset it now 
+          shopt -u nullglob
+
           # generate a list of all urls
-          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt | anew /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt 
+          #cat /bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt | anew /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt 
           
           # generate a list of all domains
-          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique domains > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.domains.txt 
+          #cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique domains > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.domains.txt 
           
           # generate a list of all params
-          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique keys > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.keys.txt 
+          #cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique keys > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.keys.txt 
           
           
           
