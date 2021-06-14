@@ -31,7 +31,7 @@ spec:
         - -c
         - |
           echo wordlist creator v1
-          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/          
+          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/       
           
           go get -u github.com/tomnomnom/anew
           go get -u github.com/tomnomnom/unfurl
@@ -40,19 +40,21 @@ spec:
           shopt -s nullglob
           for f in /bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt
           do
-            echo "Removing password for pdf file - $f"
+            echo "Extracting urls from - $f"
+            # generate a list of all urls
+            cat $f | anew /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt 
           done
           # unset it now 
           shopt -u nullglob
 
-          # generate a list of all urls
-          #cat /bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt | anew /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt 
-          
           # generate a list of all domains
-          #cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique domains > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.domains.txt 
+          echo Generating Domains
+          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique domains > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.domains.txt 
+          
           
           # generate a list of all params
-          #cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique keys > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.keys.txt 
+          echo Generating Params
+          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique keys > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.keys.txt 
           
           
           
