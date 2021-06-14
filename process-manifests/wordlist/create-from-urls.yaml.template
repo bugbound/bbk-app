@@ -31,7 +31,8 @@ spec:
         - -c
         - |
           echo wordlist creator v1
-          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/       
+          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/  
+          rm -rf /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt      
           
           go get -u github.com/tomnomnom/anew
           go get -u github.com/tomnomnom/unfurl
