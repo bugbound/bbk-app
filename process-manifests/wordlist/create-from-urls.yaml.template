@@ -43,7 +43,7 @@ spec:
           do
             echo "Extracting urls from - $f"
             # generate a list of all urls
-            cat $f | unfurl format %s://%d%p?%q | anew /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt 
+            cat $f | unfurl format "%s://%d%p?%q" | anew /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt 
           done
           # unset it now 
           shopt -u nullglob
