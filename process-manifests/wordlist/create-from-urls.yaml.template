@@ -38,7 +38,7 @@ spec:
           
           # Usage: remove all utility bills pdf file password 
           shopt -s nullglob
-          for f in "/bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt"
+          for f in /bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt
           do
             echo "Removing password for pdf file - $f"
           done
