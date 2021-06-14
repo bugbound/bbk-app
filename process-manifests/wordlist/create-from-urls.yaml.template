@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wordlist-urls-TASK_NAME
+  labels:
+    app: wordlist-urls-TASK_NAME
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: wordlist-urls-TASK_NAME
+    spec:
+      volumes:
+      - name: bbk-app-volume
+        nfs: 
+          server: 172.16.0.10
+          path: /media/39b1bd3d-d92a-4fd5-9df8-72f089aa1912/kube3000_data/bbk-app/
+      #- name: data-volume
+      #  hostPath: 
+      #    path: /opt/bbk-app/
+      #    type: Directory
+      containers:
+      - name: wordlist-urls-TASK_NAME
+        image: golang:rc-stretch
+        volumeMounts:
+        - name: bbk-app-volume
+          mountPath: /bbk-app
+        command: 
+        - /bin/bash
+        - -c
+        - |
+          echo wordlist creator v1
+          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/          
+          
+          go get -u github.com/tomnomnom/anew
+          go get -u github.com/tomnomnom/unfurl
+          
+          
+          # generate a list of all urls
+          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/*.urls.txt | anew /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt 
+          
+          # generate a list of all domains
+          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique domains > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.domains.txt 
+          
+          # generate a list of all params
+          cat /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.urls.txt  | unfurl --unique keys > /bbk-app/project-data/BBS_PROJECT_CODE/output/wordlists/all.keys.txt 
+          
+          
+          
+          
+          
+          echo all done
+      restartPolicy: Never
