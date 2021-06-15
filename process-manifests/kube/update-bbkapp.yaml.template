@@ -1,15 +1,15 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: kube-update-TASK_NAME
+  name: kube-update
   labels:
-    app: kube-update-TASK_NAME
+    app: kube-update
 spec:
   ttlSecondsAfterFinished: 100
   template:
     metadata:
       labels:
-        app: kube-update-TASK_NAME
+        app: kube-update
     spec:
       volumes:
       - name: bbk-app-volume
@@ -21,7 +21,7 @@ spec:
       #    path: /opt/bbk-app/
       #    type: Directory
       containers:
-      - name: kube-update-TASK_NAME
+      - name: kube-update
         image: python:3.8-slim
         volumeMounts:
         - name: bbk-app-volume
