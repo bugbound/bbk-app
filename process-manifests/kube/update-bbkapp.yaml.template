@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kube-update-TASK_NAME
+  labels:
+    app: kube-update-TASK_NAME
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: kube-update-TASK_NAME
+    spec:
+      volumes:
+      - name: bbk-app-volume
+        nfs: 
+          server: 172.16.0.10
+          path: /media/39b1bd3d-d92a-4fd5-9df8-72f089aa1912/kube3000_data/bbk-app/
+      #- name: bbk-app-volume
+      #  hostPath: 
+      #    path: /opt/bbk-app/
+      #    type: Directory
+      containers:
+      - name: kube-update-TASK_NAME
+        image: python:3.8-slim
+        volumeMounts:
+        - name: bbk-app-volume
+          mountPath: /bbk-app
+        command: 
+        - /bin/bash
+        - -c
+        - |
+          echo Kube Update v1
+          
+          apt update
+          apt install git -y
+          cd /bbk-app/
+          git reset --hard HEAD
+          git pull
+          
+          echo all done
+      restartPolicy: Never

@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kube-dump-pods
+  labels:
+    app: kube-dump-pods
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: kube-dump-pods
+    spec:
+      volumes:
+      - name: bbk-app-volume
+        nfs: 
+          server: 172.16.0.10
+          path: /media/39b1bd3d-d92a-4fd5-9df8-72f089aa1912/kube3000_data/bbk-app/
+      #- name: bbk-app-volume
+      #  hostPath: 
+      #    path: /opt/bbk-app/
+      #    type: Directory
+      containers:
+      - name: kube-dump-pods
+        image: python:3.8-slim
+        volumeMounts:
+        - name: bbk-app-volume
+          mountPath: /bbk-app
+        command: 
+        - /bin/bash
+        - -c
+        - |
+          echo Kube Dump Pods v1
+          echo Installing components...
+          apt update 
+          apt -y install apt-transport-https gnupg2 curl
+          curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - 
+          echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list 
+          apt update
+          apt -y install kubectl
+          kubectl get pods > /bbk-app/project-data/kube.pods.txt
+          
+
+          echo all done
+      restartPolicy: Never
