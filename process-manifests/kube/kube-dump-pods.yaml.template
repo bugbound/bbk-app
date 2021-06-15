@@ -11,6 +11,7 @@ spec:
       labels:
         app: kube-dump-pods
     spec:
+      serviceAccountName: pinky-sa
       volumes:
       - name: bbk-app-volume
         nfs: 
