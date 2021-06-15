@@ -39,7 +39,7 @@ spec:
           echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list 
           apt update
           apt -y install kubectl
-          kubectl get pods > /bbk-app/project-data/kube.pods.txt
+          kubectl get pods -o wide > /bbk-app/project-data/kube.pods.txt
           
 
           echo all done
