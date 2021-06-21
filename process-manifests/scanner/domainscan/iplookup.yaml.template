@@ -43,9 +43,7 @@ spec:
           do
             echo Running IP Lookup on "$line"
             iplabel=`dig +short $line`
-            echo $line,$iplabel
-            
-            # > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.urls.txt -subs $line
+            echo $line,$iplabel > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.iplookup.txt
             counter=$((counter+1))
           done < "$input"
           
