@@ -16,5 +16,10 @@ export const defaultDataServiceConfig: DefaultDataServiceConfig = {
       entityResourceUrl: `${root}/villains/`,
       collectionResourceUrl: `${root}/villains/`
     }
+    ,
+    DomainName: {
+      entityResourceUrl: `${root}/domainnames/`,
+      collectionResourceUrl: `${root}/domainnames/`
+    }
   }
 };
