@@ -54,10 +54,12 @@ spec:
             then
               echo CF CHECK PASSED
               echo $cfcheck
+              curl -i -X POST -H "Content-Type: application/json" -d "{\"domain\":\"$line\", \"iswaf\":0}" http://datastore-service:7788/wafdomains
               echo "-=-=-"
               pwd
             else
               echo CF CHECK !!!FAILED!!!
+              curl -i -X POST -H "Content-Type: application/json" -d "{\"domain\":\"$line\", \"iswaf\":1}" http://datastore-service:7788/wafdomains
             fi
             
             counter=$((counter+1))
