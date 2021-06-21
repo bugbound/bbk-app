@@ -37,6 +37,9 @@ spec:
           #apt install dnsutils -y
           
           GO111MODULE=on go get -u github.com/dwisiswant0/cf-check
+          go get -u github.com/tomnomnom/anew
+          go get github.com/tomnomnom/hacks/filter-resolved
+          
 
           input="/bbk-app/project-data/BBS_PROJECT_CODE/BBS_PROJECT_LIST"
           
