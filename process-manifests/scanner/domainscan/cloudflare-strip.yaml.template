@@ -53,6 +53,8 @@ spec:
             if [ -n $cfcheck ]
             then
               echo CF CHECK PASSED
+              echo $cfcheck
+              echo "-=-=-"
               pwd
             else
               echo CF CHECK !!!FAILED!!!
