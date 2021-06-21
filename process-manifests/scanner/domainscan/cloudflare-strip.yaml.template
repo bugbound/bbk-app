@@ -50,7 +50,7 @@ spec:
           do
             echo Running lookup on "$line"
             cfcheck=`echo $line | filter-resolved | cf-check`
-            if [ -n $cfcheck ]
+            if [ -n "$cfcheck" ]
             then
               echo CF CHECK PASSED
               echo $cfcheck
