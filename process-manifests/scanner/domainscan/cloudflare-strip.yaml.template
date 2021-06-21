@@ -35,7 +35,8 @@ spec:
           
           #apt update -y
           #apt install dnsutils -y
-          go get -u github.com/dwisiswant0/cf-check
+          
+          GO111MODULE=on go get -u github.com/dwisiswant0/cf-check
 
           input="/bbk-app/project-data/BBS_PROJECT_CODE/BBS_PROJECT_LIST"
           
