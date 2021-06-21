@@ -43,7 +43,27 @@ spec:
 
           input="/bbk-app/project-data/BBS_PROJECT_CODE/BBS_PROJECT_LIST"
           
-          cat $input | filter-resolved | cf-check | anew > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.cf-strip.txt         
+          echo reading list items
+          counter=0
+          input="/bbk-app/project-data/BBS_PROJECT_CODE/BBS_PROJECT_LIST"
+          while IFS= read -r line
+          do
+            echo Running lookup on "$line"
+            cfcheck=`echo $line | filter-resolved | cf-check`
+            if [ -n $cfcheck ]
+            then
+              echo CF CHECK PASSED
+              pwd
+            else
+              echo CF CHECK !!!FAILED!!!
+            fi
+            
+            counter=$((counter+1))
+          done < "$input"
+          
+          
+          
+          #cat $input | filter-resolved | cf-check | anew > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.cf-strip.txt         
           
           
           echo all done

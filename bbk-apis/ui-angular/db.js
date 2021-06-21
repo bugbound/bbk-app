@@ -54,6 +54,14 @@ const villains = [
   },
 ];
 
-const data = { heroes: heroes, villains: villains,  };
+const domainnames = [
+  {
+    id: '1',
+    domain: 'example.com'
+  }
+];
+  
+
+const data = { heroes: heroes, villains: villains, domainnames: domainnames };
 
 module.exports = data;
