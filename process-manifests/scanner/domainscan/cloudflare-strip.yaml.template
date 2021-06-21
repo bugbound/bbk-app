@@ -1,0 +1,46 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cloudflare-strip-TASK_NAME
+  labels:
+    app: cloudflare-strip-TASK_NAME
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: cloudflare-strip-TASK_NAME
+    spec:
+      volumes:
+      - name: bbk-app-volume
+        nfs: 
+          server: 172.16.0.10
+          path: /media/39b1bd3d-d92a-4fd5-9df8-72f089aa1912/kube3000_data/bbk-app/
+      #- name: data-volume
+      #  hostPath: 
+      #    path: /opt/bbk-app/
+      #    type: Directory
+      containers:
+      - name: cloudflare-strip-TASK_NAME
+        image: golang:rc-stretch
+        volumeMounts:
+        - name: bbk-app-volume
+          mountPath: /bbk-app
+        command: 
+        - /bin/bash
+        - -c
+        - |
+          echo CloudFlare v1
+          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/          
+          
+          #apt update -y
+          #apt install dnsutils -y
+          go get -u github.com/dwisiswant0/cf-check
+
+          input="/bbk-app/project-data/BBS_PROJECT_CODE/BBS_PROJECT_LIST"
+          
+          cat $input | filter-resolved | cf-check | anew > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.cf-strip.txt         
+          
+          
+          echo all done
+      restartPolicy: Never
