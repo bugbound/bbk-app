@@ -1,0 +1,55 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: iplookup-TASK_NAME
+  labels:
+    app: iplookup-TASK_NAME
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      labels:
+        app: iplookup-TASK_NAME
+    spec:
+      volumes:
+      - name: bbk-app-volume
+        nfs: 
+          server: 172.16.0.10
+          path: /media/39b1bd3d-d92a-4fd5-9df8-72f089aa1912/kube3000_data/bbk-app/
+      #- name: data-volume
+      #  hostPath: 
+      #    path: /opt/bbk-app/
+      #    type: Directory
+      containers:
+      - name: iplookup-TASK_NAME
+        image: python:3.8-slim
+        volumeMounts:
+        - name: bbk-app-volume
+          mountPath: /bbk-app
+        command: 
+        - /bin/bash
+        - -c
+        - |
+          echo IP Lookup v1
+          mkdir -p /bbk-app/project-data/BBS_PROJECT_CODE/output/          
+          
+          apt update -y
+          apt install dnsutils -y
+
+          echo reading list items
+          counter=0
+          input="/bbk-app/project-data/BBS_PROJECT_CODE/BBS_PROJECT_LIST"
+          while IFS= read -r line
+          do
+            echo Running IP Lookup on "$line"
+            iplabel=`dig +short $line`
+            echo $line,$iplabel
+            
+            # > /bbk-app/project-data/BBS_PROJECT_CODE/output/$HOSTNAME.$counter.urls.txt -subs $line
+            counter=$((counter+1))
+          done < "$input"
+          
+          
+          
+          echo all done
+      restartPolicy: Never
